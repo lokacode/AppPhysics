@@ -1,0 +1,52 @@
+<Home>:
+    Screen:
+        name: 'eqn'
+        MDTextFieldRect:
+            id:fn 
+            size_hint: None, None
+            width:600
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {'center_x': 0.5,'center_y': 0.8}
+            hint_text: "Enter the equation function y"
+        MDTextFieldRect:
+            id: first_value 
+            size_hint: None, None
+            width:600
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {'center_x': 0.5,'center_y': 0.7}
+            hint_text: "fisrt value of x"
+        MDTextFieldRect:
+            id: final_value
+            size_hint: None, None
+            width:600
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {'center_x': 0.5,'center_y': 0.6}
+            hint_text: "Final Value of x"
+
+        MDTextFieldRect:
+            id: number_of_domain
+            size_hint: None, None
+            width:600
+            height: "30dp"
+            background_color: app.theme_cls.bg_normal
+            pos_hint: {'center_x': 0.5,'center_y': 0.5}
+            hint_text: "Number of Domain"
+        MDRaisedButton:
+            text: "generate the graph"
+            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+            on_release: root.generate_graph(); root.current = 'graph'
+    Screen:
+        name: 'graph'
+        BoxLayout:
+            id: graph
+            orientation: 'vertical'
+            size_hint_y: 0.9
+            pos_hint: {'top':1}
+        MDRaisedButton:
+            text: "back to home"
+            pos_hint: {'center_x': 0.5,'center_y': 0.1}
+            on_release: root.current = 'eqn'
+            
